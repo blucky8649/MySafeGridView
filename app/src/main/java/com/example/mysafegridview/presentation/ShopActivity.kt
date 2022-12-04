@@ -39,8 +39,6 @@ class ShopActivity : AppCompatActivity() {
         binding.rvGrid.apply {
             layoutManager = lm
             adapter = shopAdapter
-            recycledViewPool.setMaxRecycledViews(1, 10)
-            setItemViewCacheSize(10)
         }
         viewModel.calcGridData().apply {
             Log.d("UseCases", "List : $this")
