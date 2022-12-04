@@ -98,7 +98,7 @@ class ProductViewHolder(
 ): RecyclerView.ViewHolder(binding.root) {
     fun bind(product: Product) {
         binding.tvTitle.text = product.productName
-        binding.tvPrice.text = "${product.saleAmount}원"
+        binding.tvPrice.text = if (product.productName.isNotEmpty()) "${product.saleAmount}원" else ""
         Glide.with(binding.root)
             .load(product.imageUrl)
             .centerCrop()
